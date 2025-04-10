@@ -19,10 +19,10 @@ This project, originally envisioned as a real-time sentiment analysis dashboard 
 - Uses `.env` for Bearer Token.
 - Run: `python3 stream_tweets.py`
 - Developed locally with VS Code on macOS.
-![Twitter Search](screenshots/request limit output.png)
+![Twitter Search](screenshots/twitter_search.png)
 
 ## Sentiment Analysis
 - Analyzes tweet sentiment with Hugging Face DistilBERT (Python 3.9).
 - Works with live tweets or mock data (Free tier: 1 request/15 min).
 - Run: `python3 stream_tweets.py`
-![Sentiment Output](screenshots/AI keyword search.png)
+![Sentiment Output](screenshots/sentiment_output.png)
