@@ -33,3 +33,4 @@ This project, originally envisioned as a real-time sentiment analysis dashboard 
 - Run: `streamlit run dashboard.py` (opens at `http://localhost:8501`).
 - Developed locally with VS Code on macOS.
 ![Dashboard](screenshots/dashboard.png)
+![Dashboard 2](screenshots/dashboard2.png)
