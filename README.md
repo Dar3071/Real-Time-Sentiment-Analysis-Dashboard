@@ -10,12 +10,12 @@ This project, originally envisioned as a real-time sentiment analysis dashboard 
 - Uses Python 3.9 (installed via Homebrew on macOS).
 - Virtual environment: `python3.9 -m venv venv`
 - Activate: `source venv/bin/activate`
-- Install dependencies: `pip install -r requirements.txt`
+- Install dependencies: `pip install -r requirements.txt` (includes `hf_transfer` for faster model downloads).
 - Developed locally with Visual Studio Code on macOS.
 
 ## Twitter API Integration
 - Fetches recent tweets with Tweepy 4.x (Twitter API v2 Free tier, Python 3.9).
-- Free tier: 1 request every 15 minutes; falls back to mock data on 429.
+- Free tier: 1 request every 15 minutes, minimum 10 tweets per request; falls back to mock data on 429.
 - Uses `.env` for Bearer Token.
 - Run: `python3 stream_tweets.py`
 - Developed locally with VS Code on macOS.
@@ -23,6 +23,6 @@ This project, originally envisioned as a real-time sentiment analysis dashboard 
 
 ## Sentiment Analysis
 - Analyzes tweet sentiment with Hugging Face DistilBERT (Python 3.9).
-- Works with live tweets or mock data (Free tier: 1 request/15 min).
+- Saves live tweet data (10 tweets/request) to `tweets_data.csv`, displays mock data on 429 (Free tier: 1 request/15 min).
 - Run: `python3 stream_tweets.py`
 ![Sentiment Output](screenshots/sentiment_output.png)
