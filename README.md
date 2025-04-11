@@ -26,3 +26,10 @@ This project, originally envisioned as a real-time sentiment analysis dashboard 
 - Saves live tweet data (10 tweets/request) to `tweets_data.csv`, displays mock data on 429 (Free tier: 1 request/15 min).
 - Run: `python3 stream_tweets.py`
 ![Sentiment Output](screenshots/sentiment_output.png)
+
+## Visualization with Streamlit
+- Displays tweet sentiment data from `tweets_data.csv` using Streamlit (Python 3.9).
+- Features: Data table, sentiment bar chart, keyword filter.
+- Run: `streamlit run dashboard.py` (opens at `http://localhost:8501`).
+- Developed locally with VS Code on macOS.
+![Dashboard](screenshots/dashboard.png)
