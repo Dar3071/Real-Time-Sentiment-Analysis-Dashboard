@@ -12,14 +12,14 @@ This project, originally envisioned as a real-time sentiment analysis dashboard 
 - Virtual environment: `python3.9 -m venv venv`
 - Activate: `source venv/bin/activate`
 - Install dependencies: `pip install -r requirements.txt`.
-- Developed locally with Visual Studio Code on macOS.
+
 
 ## Twitter API Integration
 - Fetches recent tweets with Tweepy 4.x (Twitter API v2 Free tier, Python 3.9).
 - Free tier: 1 request every 15 minutes, minimum 10 tweets per request; falls back to mock data on 429.
 - Uses `.env` for Bearer Token.
 - Run: `python3 stream_tweets.py`
-- Developed locally with VS Code on macOS.
+
 ![Twitter Search](screenshots/twitter_search.png)
 
 ## Sentiment Analysis
@@ -32,7 +32,7 @@ This project, originally envisioned as a real-time sentiment analysis dashboard 
 - Displays tweet sentiment data from `tweets_data.csv` using Streamlit (Python 3.9).
 - Features: Data table, sentiment bar chart, keyword filter.
 - Run: `streamlit run dashboard.py` (opens at `http://localhost:8501`).
-- Developed locally with VS Code on macOS.
+
 ![Dashboard](screenshots/dashboard.png)
 ![Dashboard 2](screenshots/dashboard2.png)
 
