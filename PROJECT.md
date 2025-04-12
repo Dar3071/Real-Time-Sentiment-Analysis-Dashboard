@@ -1,4 +1,4 @@
-# Project Overview: Real-Time Sentiment Analysis Dashboard
+# Project Overview: Twitter Sentiment Analysis Dashboard
 
 ## Objective
 Build a portfolio project demonstrating skills in Python, API integration, machine learning, data visualization, and cloud deployment by creating a dashboard that analyzes tweet sentiment in near real-time using the Twitter API Free tier.
