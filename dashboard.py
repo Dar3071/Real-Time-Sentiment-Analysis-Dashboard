@@ -30,12 +30,12 @@ if df is not None:
     
     # Allow keyword filtering
     st.subheader("Filter Tweets by Keyword")
-    keyword = st.text_input("Enter keyword to filter tweets (e.g., #AI):")
+    keyword = st.text_input("Enter keyword to filter tweets (e.g., #AI, #Weather, #Travel ):")
     if keyword:
         filtered_df = df[df["text"].str.contains(keyword, case=False, na=False)]
         st.write(f"Showing tweets containing '{keyword}':")
         st.dataframe(filtered_df)
     else:
-        st.write("Enter a keyword to filter the tweets.")
+        st.write("Enter a keyword to filter the tweets. (e.g., #AI, #Weather, #Travel )")
 else:
     st.error("No tweet data found. Run `python3 stream_tweets.py` locally to generate `tweets_data.csv` first.")
