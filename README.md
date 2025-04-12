@@ -5,12 +5,13 @@ This project, originally envisioned as a real-time sentiment analysis dashboard 
 - **Developed by**: [Deon Rennie]
 - **Date**: April 2025
 - **Environment**: Local macOS with VS Code, Python 3.9
+- **Detailed Overview**: [PROJECT.md](PROJECT.md)
 
 ## Environment Setup
 - Uses Python 3.9 (installed via Homebrew on macOS).
 - Virtual environment: `python3.9 -m venv venv`
 - Activate: `source venv/bin/activate`
-- Install dependencies: `pip install -r requirements.txt` (includes `hf_transfer` for faster model downloads).
+- Install dependencies: `pip install -r requirements.txt`.
 - Developed locally with Visual Studio Code on macOS.
 
 ## Twitter API Integration

@@ -7,16 +7,16 @@ import csv
 from datetime import datetime, timedelta
 import json
 
-# Load environment variables
+# Load environment variables from .env file
 load_dotenv()
 
-# Initialize sentiment analysis pipeline
+# Initialize Hugging Face sentiment analysis pipeline with DistilBERT
 sentiment_analyzer = pipeline("sentiment-analysis", model="distilbert-base-uncased-finetuned-sst-2-english")
 
-# File to track last fetch time
+# File to store last API fetch timestamp
 LAST_FETCH_FILE = "last_fetch.json"
 
-# Function to save live tweets to CSV
+# Save live tweets to CSV with sentiment data
 def save_to_csv(tweets):
     filename = "tweets_data.csv"
     file_exists = os.path.isfile(filename)
@@ -35,7 +35,7 @@ def save_to_csv(tweets):
                 "confidence": tweet["confidence"]
             })
 
-# Function to check/update last fetch time
+# Check if 15 minutes have passed since last fetch (Free tier limit)
 def can_fetch_now():
     if not os.path.exists(LAST_FETCH_FILE):
         return True
@@ -43,23 +43,29 @@ def can_fetch_now():
         last_fetch = datetime.fromisoformat(json.load(f)["last_fetch"])
     return datetime.now() - last_fetch >= timedelta(minutes=15)
 
+# Update last fetch timestamp
 def update_last_fetch():
     with open(LAST_FETCH_FILE, 'w') as f:
         json.dump({"last_fetch": datetime.now().isoformat()}, f)
 
-# Main function
+# Main function to fetch and process tweets
 def main():
+    # Load Twitter API Bearer Token
     bearer_token = os.getenv("TWITTER_BEARER_TOKEN")
     if not bearer_token:
         print("Error: TWITTER_BEARER_TOKEN not found in .env")
         return
     
+    # Initialize Tweepy client for Twitter API v2
     client = tweepy.Client(bearer_token=bearer_token)
+    
+    # Prompt user for search keyword
     keyword = input("Enter a keyword to search (e.g., #AI): ")
     print(f"Searching recent tweets for: {keyword}")
     
     if can_fetch_now():
         try:
+            # Fetch recent tweets (Free tier: 10 tweets min, 1 request/15 min)
             tweets = client.search_recent_tweets(
                 query=keyword,
                 max_results=10,
@@ -68,6 +74,7 @@ def main():
             if tweets.data:
                 tweet_data = []
                 for tweet in tweets.data:
+                    # Analyze sentiment for each tweet
                     sentiment = sentiment_analyzer(tweet.text)[0]
                     tweet_info = {
                         "author_id": tweet.author_id,
