@@ -39,3 +39,10 @@ This project, originally envisioned as a real-time sentiment analysis dashboard 
 - My Twitter Sentiment Analysis Dashboard is deployed live here through the Streamlit community cloud.
 - Access: [Live Dashboard URL: https://real-time-sentiment-analysis-dashboard-pmik2nhfgbrfkksnqyhpv6.streamlit.app/]
 - Showcases tweet sentiment data online.
+
+## Real-Time Updates
+- Adds periodic tweet fetching (every 15 minutes, Free tier) and dashboard auto-refresh (every minute) (Python 3.9).
+- Tracks fetch time to respect API limits, updates `tweets_data.csv` with new data.
+- Run: `python3 stream_tweets.py` (fetch), `streamlit run dashboard.py` (view).
+- Deployed live: [Live Dashboard URL, e.g., https://real-time-sentiment-analysis-dashboard-pmik2nhfgbrfkksnqyhpv6.streamlit.app/]
+![Real-Time Dashboard](screenshots/realtime_dashboard.png)
