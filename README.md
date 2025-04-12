@@ -34,3 +34,8 @@ This project, originally envisioned as a real-time sentiment analysis dashboard 
 - Developed locally with VS Code on macOS.
 ![Dashboard](screenshots/dashboard.png)
 ![Dashboard 2](screenshots/dashboard2.png)
+
+## Deployment with Streamlit Community Cloud
+- My Twitter Sentiment Analysis Dashboard is deployed live here through the Streamlit community cloud.
+- Access: [Live Dashboard URL: https://real-time-sentiment-analysis-dashboard-pmik2nhfgbrfkksnqyhpv6.streamlit.app/]
+- Showcases tweet sentiment data online.
